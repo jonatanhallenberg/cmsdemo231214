@@ -1,11 +1,13 @@
 import { graphql } from "gatsby"
 import * as React from "react"
 import { Card } from "../components/Card"
+import Header from "../components/Header";
 
 const IndexPage = ({ data }) => {
 
   return (
     <main className="flex flex-row gap-3">
+      <Header />
       {data.allContentfulEmployee.nodes.map(employee => (
         <Card title={employee.name} description="Kommer sen" imageUrl={employee.portrait.file.url} />
       ))}
